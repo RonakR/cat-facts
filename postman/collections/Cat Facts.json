@@ -176,6 +176,27 @@
 		},
 		{
 			"name": "Returns a random fact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "81ec5366-6ba6-47a7-98de-829591003060",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('fact');",
+							"    pm.expect(jsonData).to.have.property('length');",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "7fdd55c2-98fc-4eba-a457-9b25c3eb0789",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
