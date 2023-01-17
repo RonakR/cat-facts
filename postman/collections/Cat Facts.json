@@ -176,6 +176,26 @@
 		},
 		{
 			"name": "Returns a random fact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c236d151-ef71-4677-960d-0f7e96349c94",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('fact');",
+							"    pm.expect(jsonData).to.have.property('length');",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "6677d5d9-d212-4fad-a6b0-fa9bb1e3f96e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
