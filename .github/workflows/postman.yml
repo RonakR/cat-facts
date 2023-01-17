@@ -21,12 +21,12 @@ jobs:
           # Lint your API using Postman CLI
           postman api lint --integration-id 131138
   unit-tests:
-    needs: [build, api-governance]
+    needs: [build, api-governance-tests]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
   api-contract-tests:
-    needs: [build, api-governance]
+    needs: [build, api-governance-tests]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
