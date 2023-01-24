@@ -182,7 +182,7 @@
 					"script": {
 						"id": "54884c9a-1472-4e68-b6f6-fce732a81b33",
 						"exec": [
-							"pm.test(\"Your test name\", function () {",
+							"pm.test(\"Validate Schema\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData).to.have.property('fact');",
 							"    pm.expect(jsonData).to.have.property('length');",
