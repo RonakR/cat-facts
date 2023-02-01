@@ -5,7 +5,7 @@ info:
   title: Cat Fact API
   description: Cat Fact API
   contact:
-    email: admin@admin.com
+    email: admin@catfacts.com
     url: https://catfact.ninja
   license:
     name: commons
