@@ -1,4 +1,5 @@
 openapi: 3.0.0
+x-apiname: catFacts
 x-responsetime: 10000
 info:
   title: Cat Fact API
@@ -17,7 +18,6 @@ servers:
 paths:
   /breeds:
     get:
-      summary: Returns a list of breeds
       tags:
         - Breeds
       description: Returns a list of breeds
