@@ -45,7 +45,6 @@ paths:
           schema:
             type: integer
             format: int64
-            default: 10
       responses:
         '200':
           description: Normal response
