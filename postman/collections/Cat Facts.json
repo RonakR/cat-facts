@@ -17,10 +17,22 @@
 							"listen": "test",
 							"script": {
 								"id": "4f41a937-e731-468c-9c7d-8f5d60416b0a",
-								"type": "text/javascript",
 								"exec": [
-									""
-								]
+									"pm.test(\"Schema Validation\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    // Check fact",
+									"    pm.expect(jsonData).to.have.property('fact');",
+									"    pm.expect(jsonData.fact).to.be.a(\"string\")",
+									"    // Check length",
+									"    pm.expect(jsonData).to.have.property('length');",
+									"    pm.expect(jsonData.length).to.be.a(\"number\")",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -46,9 +58,9 @@
 							],
 							"query": [
 								{
-									"description": "maximum length of returned fact",
 									"key": "max_length",
-									"value": "<long>"
+									"value": "<long>",
+									"description": "maximum length of returned fact"
 								}
 							]
 						},
