@@ -1,0 +1,622 @@
+{
+	"info": {
+		"_postman_id": "7d0ae13d-7dfd-4fee-9df0-02a6b517d26d",
+		"name": "Cat Facts",
+		"description": "Cat Fact API\n\nContact Support:\n Email: admin@admin.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24492028-7d0ae13d-7dfd-4fee-9df0-02a6b517d26d"
+	},
+	"item": [
+		{
+			"name": "Facts",
+			"item": [
+				{
+					"name": "Returns a random fact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "80c64906-b451-41c4-bdc1-b0c2bf1a962f",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    // Check fact",
+									"    pm.expect(jsonData).to.have.property('fact');",
+									"    pm.expect(jsonData.fact).to.be.a(\"string\")",
+									"    // Check length",
+									"    pm.expect(jsonData).to.have.property('length');",
+									"    pm.expect(jsonData.length).to.be.a(\"number\")",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6f4cf49c-800e-4e46-b7ba-d6363a5ef3aa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/fact?breed=<string>&country=<string>&origin=<string>&coat=<string>&pattern=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fact"
+							],
+							"query": [
+								{
+									"key": "breed",
+									"value": "<string>",
+									"description": "maximum length of returned fact"
+								},
+								{
+									"key": "country",
+									"value": "<string>",
+									"description": "maximum length of returned fact"
+								},
+								{
+									"key": "origin",
+									"value": "<string>",
+									"description": "maximum length of returned fact"
+								},
+								{
+									"key": "coat",
+									"value": "<string>",
+									"description": "maximum length of returned fact"
+								},
+								{
+									"key": "pattern",
+									"value": "<string>",
+									"description": "maximum length of returned fact"
+								}
+							]
+						},
+						"description": "Returns a random fact"
+					},
+					"response": [
+						{
+							"id": "aee2ce91-15b1-4986-bd9a-3cf0f994a792",
+							"name": "Normal response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact?breed=<string>&country=<string>&origin=<string>&coat=<string>&pattern=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									],
+									"query": [
+										{
+											"description": "maximum length of returned fact",
+											"key": "breed",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "country",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "origin",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "coat",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "pattern",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": \"<integer>\"\n}"
+						},
+						{
+							"id": "fff07a9d-480b-4e33-8f37-d9cc9084391c",
+							"name": "Fact not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact?breed=<string>&country=<string>&origin=<string>&coat=<string>&pattern=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									],
+									"query": [
+										{
+											"description": "maximum length of returned fact",
+											"key": "breed",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "country",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "origin",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "coat",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "pattern",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						},
+						{
+							"id": "3bed0532-812e-4c9a-be4e-dd8a661e893b",
+							"name": "Normal response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact?breed=<string>&country=<string>&origin=<string>&coat=<string>&pattern=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									],
+									"query": [
+										{
+											"description": "maximum length of returned fact",
+											"key": "breed",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "country",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "origin",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "coat",
+											"value": "<string>"
+										},
+										{
+											"description": "maximum length of returned fact",
+											"key": "pattern",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a list of facts",
+					"id": "a5568acf-8672-49cd-affb-87f497d1a2f0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/facts?fact=<string>&length=<integer>&fact=<string>&length=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"facts"
+							],
+							"query": [
+								{
+									"description": "length",
+									"key": "fact",
+									"value": "<string>"
+								},
+								{
+									"description": "length",
+									"key": "length",
+									"value": "<integer>"
+								},
+								{
+									"description": "limit the amount of results returned",
+									"key": "fact",
+									"value": "<string>"
+								},
+								{
+									"description": "limit the amount of results returned",
+									"key": "length",
+									"value": "<integer>"
+								}
+							]
+						},
+						"description": "Returns a a list of facts"
+					},
+					"response": [
+						{
+							"id": "19504640-7a33-4ea7-b1c6-f04cb3b730a4",
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts?fact=<string>&length=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									],
+									"query": [
+										{
+											"description": "length",
+											"key": "fact",
+											"value": "<string>"
+										},
+										{
+											"description": "length",
+											"key": "length",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": \"<integer>\"\n}"
+						},
+						{
+							"id": "83498e4e-f887-4f9d-97ed-cb6ed8bacb89",
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts?fact=<string>&length=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									],
+									"query": [
+										{
+											"description": "length",
+											"key": "fact",
+											"value": "<string>"
+										},
+										{
+											"description": "length",
+											"key": "length",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": \"<integer>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "fc80e95b-619b-41b9-b144-98f8d83cb41d",
+			"description": "Cat Facts"
+		},
+		{
+			"name": "Breeds",
+			"item": [
+				{
+					"name": "Returns a list of breeds",
+					"id": "68cd2aee-1036-4a3c-8529-dad3189ec2d3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/breeds?breed=<string>&country=<string>&origin=<string>&coat=<string>&pattern=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"breeds"
+							],
+							"query": [
+								{
+									"description": "This is a description",
+									"key": "breed",
+									"value": "<string>"
+								},
+								{
+									"description": "This is a description",
+									"key": "country",
+									"value": "<string>"
+								},
+								{
+									"description": "This is a description",
+									"key": "origin",
+									"value": "<string>"
+								},
+								{
+									"description": "This is a description",
+									"key": "coat",
+									"value": "<string>"
+								},
+								{
+									"description": "This is a description",
+									"key": "pattern",
+									"value": "<string>"
+								}
+							]
+						},
+						"description": "Returns a list of breeds"
+					},
+					"response": [
+						{
+							"id": "00bfd680-6c93-424c-8ea0-35459aaf03dc",
+							"name": "Normal operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds?breed=<string>&country=<string>&origin=<string>&coat=<string>&pattern=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									],
+									"query": [
+										{
+											"description": "This is a description",
+											"key": "breed",
+											"value": "<string>"
+										},
+										{
+											"description": "This is a description",
+											"key": "country",
+											"value": "<string>"
+										},
+										{
+											"description": "This is a description",
+											"key": "origin",
+											"value": "<string>"
+										},
+										{
+											"description": "This is a description",
+											"key": "coat",
+											"value": "<string>"
+										},
+										{
+											"description": "This is a description",
+											"key": "pattern",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"breed\": \"<string>\",\n  \"country\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"coat\": \"<string>\",\n  \"pattern\": \"<string>\"\n}"
+						},
+						{
+							"id": "75367f54-3672-4da7-8019-19f03f711283",
+							"name": "Server exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds?breed=<string>&country=<string>&origin=<string>&coat=<string>&pattern=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									],
+									"query": [
+										{
+											"description": "This is a description",
+											"key": "breed",
+											"value": "<string>"
+										},
+										{
+											"description": "This is a description",
+											"key": "country",
+											"value": "<string>"
+										},
+										{
+											"description": "This is a description",
+											"key": "origin",
+											"value": "<string>"
+										},
+										{
+											"description": "This is a description",
+											"key": "coat",
+											"value": "<string>"
+										},
+										{
+											"description": "This is a description",
+											"key": "pattern",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"breed\": \"<string>\",\n  \"country\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"coat\": \"<string>\",\n  \"pattern\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "b420550b-8ab3-4244-950b-48444c05988e",
+			"description": "Breeds"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{basicAuthUsername}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{basicAuthPassword}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "614cb2cc-b70d-42c7-8dc7-d559180f9e3f",
+			"key": "baseUrl",
+			"value": "https://catfact.ninja"
+		}
+	]
+}
