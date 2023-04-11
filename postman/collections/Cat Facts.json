@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "8d7f1833-62e8-4c64-8392-6d8647b36744",
+		"_postman_id": "3af9fbec-efd4-4aae-b0a3-623d3421f319",
 		"name": "Cat Facts",
 		"description": "Contact Support:\n Email: contact@catfact.ninja",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "24492028-8d7f1833-62e8-4c64-8392-6d8647b36744"
+		"_uid": "24492028-3af9fbec-efd4-4aae-b0a3-623d3421f319"
 	},
 	"item": [
 		{
@@ -16,9 +16,9 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4f41a937-e731-468c-9c7d-8f5d60416b0a",
+								"id": "abad1253-4027-40de-886a-20d3472c6e81",
 								"exec": [
-									"pm.test(\"Schema Validation\", function () {",
+									"pm.test(\"Your test name\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    // Check fact",
 									"    pm.expect(jsonData).to.have.property('fact');",
@@ -36,7 +36,7 @@
 							}
 						}
 					],
-					"id": "0b8d6cb6-7b72-47f6-9674-eedb5bd0d5c3",
+					"id": "2b1df75c-526f-4446-9a23-7b44b301aaa2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -68,7 +68,7 @@
 					},
 					"response": [
 						{
-							"id": "79076359-8a00-4152-979b-09017ad6f7eb",
+							"id": "450c076a-4fd1-4d85-b078-cb223a540cb4",
 							"name": "Normal response",
 							"originalRequest": {
 								"method": "GET",
@@ -103,7 +103,7 @@
 							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": \"<integer>\"\n}"
 						},
 						{
-							"id": "fabeccbe-9dca-4243-8d7a-71bb69d0e50e",
+							"id": "329cb370-ea51-49f9-9286-3ae08b551231",
 							"name": "Fact not found",
 							"originalRequest": {
 								"method": "GET",
@@ -132,7 +132,7 @@
 							"cookie": []
 						},
 						{
-							"id": "1156064e-d1d5-40b7-bb01-fbe1b1d616c1",
+							"id": "575ce34b-a65b-4d5c-8267-57a7de2bc3df",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -163,13 +163,13 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"et irure commodo officia id\",\n  \"length\": -77143997\n}"
+							"body": "{\n  \"fact\": \"esse in \",\n  \"length\": 62234638\n}"
 						}
 					]
 				},
 				{
 					"name": "Get a list of facts",
-					"id": "80625b17-86f3-4fb2-9f72-8c33ee19992b",
+					"id": "6cadb956-18b4-41cb-8069-df76e83ffd06",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -205,7 +205,7 @@
 					},
 					"response": [
 						{
-							"id": "bdb275d8-0ab0-4509-9004-f755de8d8b41",
+							"id": "dc33c0f5-df72-449c-9ac6-4afca681e81d",
 							"name": "successful operation",
 							"originalRequest": {
 								"method": "GET",
@@ -244,7 +244,7 @@
 							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": \"<integer>\"\n}"
 						},
 						{
-							"id": "235b99f1-c9bf-4a51-a2fb-2417958510d3",
+							"id": "45256cc1-69ee-4722-b6ab-0c51f4ea160e",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -275,12 +275,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"et irure commodo officia id\",\n  \"length\": -77143997\n}"
+							"body": "{\n  \"fact\": \"esse in \",\n  \"length\": 62234638\n}"
 						}
 					]
 				}
 			],
-			"id": "74f92581-3a65-4c75-9c06-216f902c4c2d",
+			"id": "6ec6b58e-5246-4da8-8681-0570b2f7bceb",
 			"description": "Cat Facts"
 		},
 		{
@@ -288,7 +288,7 @@
 			"item": [
 				{
 					"name": "Returns a list of breeds",
-					"id": "36d485f5-cb1d-4234-af52-399df7d1a9ca",
+					"id": "cb738ded-970f-4d18-a8e5-1f5b744b7df1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -320,7 +320,7 @@
 					},
 					"response": [
 						{
-							"id": "7551c208-15a4-4068-bb61-9c19d76622c7",
+							"id": "605a8501-9cec-4dc5-9047-9bc0db8d2814",
 							"name": "Normal operation",
 							"originalRequest": {
 								"method": "GET",
@@ -355,7 +355,7 @@
 							"body": "{\n  \"breed\": \"<string>\",\n  \"country\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"coat\": \"<string>\",\n  \"pattern\": \"<string>\"\n}"
 						},
 						{
-							"id": "2c75ff4f-4f52-485a-ba90-7e79ea828c38",
+							"id": "5ee53f8a-7a09-465c-87dd-43d5ae2b447e",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -386,18 +386,18 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"breed\": \"in commodo do\",\n  \"country\": \"ea dolore et in\",\n  \"origin\": \"non mollit amet\",\n  \"coat\": \"fugiat sunt\",\n  \"pattern\": \"deserunt amet culpa\"\n}"
+							"body": "{\n  \"breed\": \"Duis exercitation\",\n  \"country\": \"anim occaecat Ut\",\n  \"origin\": \"laboris aliquip dolore\",\n  \"coat\": \"qui sint irure\",\n  \"pattern\": \"sit nisi sunt\"\n}"
 						}
 					]
 				}
 			],
-			"id": "b508db9d-d234-4e25-b386-8856d9297152",
+			"id": "040aa529-f0cd-428d-b680-cc63451c8ac4",
 			"description": "Breeds"
 		}
 	],
 	"variable": [
 		{
-			"id": "4c6aaf78-aa6b-488b-b040-0c2b6f91ed5d",
+			"id": "9130ca04-7df9-45fc-87fc-ad13cbba1c85",
 			"key": "baseUrl",
 			"value": "https://catfact.ninja",
 			"type": "any"
