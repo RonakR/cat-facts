@@ -11,14 +11,14 @@
 			"name": "Facts",
 			"item": [
 				{
-					"name": "Returns a random fact",
+					"name": "get Random Fact",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "abad1253-4027-40de-886a-20d3472c6e81",
 								"exec": [
-									"pm.test(\"Your test name\", function () {",
+									"pm.test(\"Validate Schema\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    // Check fact",
 									"    pm.expect(jsonData).to.have.property('fact');",
@@ -130,40 +130,6 @@
 							"_postman_previewlanguage": "text",
 							"header": [],
 							"cookie": []
-						},
-						{
-							"id": "575ce34b-a65b-4d5c-8267-57a7de2bc3df",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/fact",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"fact"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"fact\": \"esse in \",\n  \"length\": 62234638\n}"
 						}
 					]
 				},
@@ -241,41 +207,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": \"<integer>\"\n}"
-						},
-						{
-							"id": "45256cc1-69ee-4722-b6ab-0c51f4ea160e",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/facts",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"facts"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"fact\": \"esse in \",\n  \"length\": 62234638\n}"
+							"body": "[\n  {\n    \"fact\": \"<string>\",\n    \"length\": \"<integer>\"\n  },\n  {\n    \"fact\": \"<string>\",\n    \"length\": \"<integer>\"\n  }\n]"
 						}
 					]
 				}
@@ -287,7 +219,7 @@
 			"name": "Breeds",
 			"item": [
 				{
-					"name": "Returns a list of breeds",
+					"name": "get Breeds",
 					"id": "cb738ded-970f-4d18-a8e5-1f5b744b7df1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -352,41 +284,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"breed\": \"<string>\",\n  \"country\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"coat\": \"<string>\",\n  \"pattern\": \"<string>\"\n}"
-						},
-						{
-							"id": "5ee53f8a-7a09-465c-87dd-43d5ae2b447e",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/breeds",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"breeds"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"breed\": \"Duis exercitation\",\n  \"country\": \"anim occaecat Ut\",\n  \"origin\": \"laboris aliquip dolore\",\n  \"coat\": \"qui sint irure\",\n  \"pattern\": \"sit nisi sunt\"\n}"
+							"body": "[\n  {\n    \"breed\": \"<string>\",\n    \"country\": \"<string>\",\n    \"origin\": \"<string>\",\n    \"coat\": \"<string>\",\n    \"pattern\": \"<string>\"\n  },\n  {\n    \"breed\": \"<string>\",\n    \"country\": \"<string>\",\n    \"origin\": \"<string>\",\n    \"coat\": \"<string>\",\n    \"pattern\": \"<string>\"\n  }\n]"
 						}
 					]
 				}
