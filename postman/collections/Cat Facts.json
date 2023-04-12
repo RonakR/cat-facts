@@ -11,12 +11,13 @@
 			"name": "Facts",
 			"item": [
 				{
-					"name": "get Random Fact",
+					"name": "Returns a random fact",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "303288f7-8055-4ab1-a3d2-9b33d14829e3",
+								"type": "text/javascript",
 								"exec": [
 									"pm.test(\"Validate Schema\", function () {",
 									"    var jsonData = pm.response.json();",
@@ -31,8 +32,7 @@
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
 									"});"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -58,9 +58,9 @@
 							],
 							"query": [
 								{
+									"description": "maximum length of returned fact",
 									"key": "max_length",
-									"value": "<long>",
-									"description": "maximum length of returned fact"
+									"value": "<long>"
 								}
 							]
 						},
@@ -130,6 +130,40 @@
 							"_postman_previewlanguage": "text",
 							"header": [],
 							"cookie": []
+						},
+						{
+							"id": "5e825a76-e24b-4ef4-974c-5ffc1896228e",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"dolore\",\n  \"length\": -1576964\n}"
 						}
 					]
 				},
@@ -199,7 +233,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "json",
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -207,7 +241,41 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"fact\": \"<string>\",\n    \"length\": \"<integer>\"\n  },\n  {\n    \"fact\": \"<string>\",\n    \"length\": \"<integer>\"\n  }\n]"
+							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": \"<integer>\"\n}"
+						},
+						{
+							"id": "7318ee6c-bd9b-4d19-94a2-b15bfa8189c5",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"dolore\",\n  \"length\": -1576964\n}"
 						}
 					]
 				}
@@ -219,7 +287,7 @@
 			"name": "Breeds",
 			"item": [
 				{
-					"name": "get Breeds",
+					"name": "Returns a list of breeds",
 					"id": "4ee45bd3-550e-4722-a338-f50f632bffca",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -276,7 +344,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "json",
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -284,7 +352,41 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"breed\": \"<string>\",\n    \"country\": \"<string>\",\n    \"origin\": \"<string>\",\n    \"coat\": \"<string>\",\n    \"pattern\": \"<string>\"\n  },\n  {\n    \"breed\": \"<string>\",\n    \"country\": \"<string>\",\n    \"origin\": \"<string>\",\n    \"coat\": \"<string>\",\n    \"pattern\": \"<string>\"\n  }\n]"
+							"body": "{\n  \"breed\": \"<string>\",\n  \"country\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"coat\": \"<string>\",\n  \"pattern\": \"<string>\"\n}"
+						},
+						{
+							"id": "433a1f0b-3db7-4ab4-b0c8-44b034b118f0",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"breed\": \"dolor nulla Exce\",\n  \"country\": \"Excepteur quis\",\n  \"origin\": \"cupidatat sed aute\",\n  \"coat\": \"non in exercitation dolore\",\n  \"pattern\": \"ut Duis\"\n}"
 						}
 					]
 				}
@@ -297,7 +399,8 @@
 		{
 			"id": "80b6eee9-e585-4261-9f99-f76bc5a545f8",
 			"key": "baseUrl",
-			"value": "https://catfact.ninja"
+			"value": "https://catfact.ninja",
+			"type": "any"
 		}
 	]
 }
