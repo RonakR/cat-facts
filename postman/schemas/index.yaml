@@ -37,7 +37,6 @@ paths:
           description: Normal operation
           content:
             application/json:
-              example: success
               schema:
                 type: array
                 items:
@@ -47,13 +46,11 @@ paths:
           description: Server Exception
           content:
             application/json:
-              example: unsuccessful
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/Breed'
-                $ref: '#/components/schemas/Breed'
-          
+                $ref: '#/components/schemas/Breed'     
   /fact:
     get:
       summary: Returns a random fact
@@ -66,7 +63,6 @@ paths:
           in: query
           description: maximum length of returned fact
           required: false
-          example: success
           schema:
             type: integer
             format: int64
@@ -86,7 +82,6 @@ paths:
           description: Server Exception
           content:
             application/json:
-              example: unsuccess
               schema:
                 $ref: '#/components/schemas/CatFact'
   /facts:
@@ -101,7 +96,6 @@ paths:
           description: length
           in: query
           required: false
-          example: success
           schema:
             type: integer
             format: int64
@@ -109,7 +103,6 @@ paths:
           in: query
           description: limit the amount of results returned
           required: false
-          example: success
           schema:
             type: integer
             format: int64
@@ -118,7 +111,6 @@ paths:
           description: successful operation
           content:
             application/json:
-              example: success
               schema:
                 type: array
                 items:
@@ -128,7 +120,6 @@ paths:
           description: Server Exception
           content:
             application/json:
-              example: unsuccess
               schema:
                 type: array
                 items:
