@@ -9,7 +9,6 @@ id = d8ca5dcb-e407-4348-9f39-3daf3cf00119
 
 [config.relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"24492028-b001a675-18f1-4c9c-89bb-646b3443b75d","path":"Cat Facts.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Schema\",\"folderStrategy\":\"Tags\",\"includeAuthInfoInExample\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"requestParametersResolution\":\"Schema\",\"updateCollectionSync\":true,\"exampleParametersResolution\":\"Schema\"}"}}
 
 [config.relations.collections.metaData]
 
@@ -19,4 +18,3 @@ files[] = {"path":"index.yaml","metaData":{}}
 
 [config.relations.apiDefinition.metaData]
 type = openapi:3
-rootFiles[] = index.yaml
