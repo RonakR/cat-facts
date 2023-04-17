@@ -9,7 +9,7 @@ id = d8ca5dcb-e407-4348-9f39-3daf3cf00119
 
 [config.relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"24492028-1c8ff6fa-cd8e-4bef-b944-70e4e4ca9a7b","path":"Cat Facts.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Tags\",\"includeAuthInfoInExample\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"requestParametersResolution\":\"Example\",\"updateCollectionSync\":true,\"exampleParametersResolution\":\"Example\"}"}}
+files[] = {"id":"24492028-4c23561e-5b32-456d-9a7d-a2e47faed09a","path":"Cat Facts.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Tags\",\"includeAuthInfoInExample\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"requestParametersResolution\":\"Example\",\"updateCollectionSync\":true,\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 

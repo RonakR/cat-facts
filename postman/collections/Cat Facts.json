@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "1c8ff6fa-cd8e-4bef-b944-70e4e4ca9a7b",
+		"_postman_id": "4c23561e-5b32-456d-9a7d-a2e47faed09a",
 		"name": "Cat Facts",
 		"description": "Cat Fact API\n\nContact Support:\n Email: admin@admin.com",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "24492028-1c8ff6fa-cd8e-4bef-b944-70e4e4ca9a7b"
+		"_uid": "24492028-4c23561e-5b32-456d-9a7d-a2e47faed09a"
 	},
 	"item": [
 		{
@@ -12,7 +12,31 @@
 			"item": [
 				{
 					"name": "Returns a random fact",
-					"id": "464129a9-5579-4284-84c9-a265271840fc",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b4da2609-6637-4665-80be-7c5e288e051b",
+								"exec": [
+									"pm.test(\"Validate Schema\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    // Check fact",
+									"    pm.expect(jsonData).to.have.property('fact');",
+									"    pm.expect(jsonData.fact).to.be.a(\"string\")",
+									"    // Check length",
+									"    pm.expect(jsonData).to.have.property('length');",
+									"    pm.expect(jsonData.length).to.be.a(\"number\")",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "43c211ad-7b5b-4efc-9ac3-8fac21d9ce5b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -25,26 +49,19 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/fact?max_length=-55332469",
+							"raw": "{{baseUrl}}/fact",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"fact"
-							],
-							"query": [
-								{
-									"description": "maximum length of returned fact",
-									"key": "max_length",
-									"value": "-55332469"
-								}
 							]
 						},
 						"description": "Returns a random fact"
 					},
 					"response": [
 						{
-							"id": "534c8ed2-338f-4663-9e37-3734a01018c1",
+							"id": "a508a002-4a03-4cb6-b401-7d3c89ffa191",
 							"name": "Normal response",
 							"originalRequest": {
 								"method": "GET",
@@ -56,19 +73,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/fact?max_length=-55332469",
+									"raw": "{{baseUrl}}/fact",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"fact"
-									],
-									"query": [
-										{
-											"description": "maximum length of returned fact",
-											"key": "max_length",
-											"value": "-55332469"
-										}
 									]
 								}
 							},
@@ -82,10 +92,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"A cat's normal pulse is 140-240 beats per minute, with an average of 195.\",\n  \"length\": 73\n}"
+							"body": "{\n  \"fact\": \"A cat's normal pulse is 140-240 beats per minute, with an average of 195.\",\n  \"length\": 73,\n  \"width\": 42\n}"
 						},
 						{
-							"id": "a236eb34-6cba-4883-8676-113aed6e0102",
+							"id": "abf67b53-9f25-4967-8aa2-8f4e8d36ca5e",
 							"name": "Fact not found",
 							"originalRequest": {
 								"method": "GET",
@@ -97,19 +107,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/fact?max_length=-55332469",
+									"raw": "{{baseUrl}}/fact",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"fact"
-									],
-									"query": [
-										{
-											"description": "maximum length of returned fact",
-											"key": "max_length",
-											"value": "-55332469"
-										}
 									]
 								}
 							},
@@ -120,7 +123,7 @@
 							"cookie": []
 						},
 						{
-							"id": "beaf3a23-c0c9-4e1e-93a4-2b97521df828",
+							"id": "801fab9f-fa47-4ec0-8556-e9e6a57040c7",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -132,19 +135,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/fact?max_length=-55332469",
+									"raw": "{{baseUrl}}/fact",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"fact"
-									],
-									"query": [
-										{
-											"description": "maximum length of returned fact",
-											"key": "max_length",
-											"value": "-55332469"
-										}
 									]
 								}
 							},
@@ -158,13 +154,13 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"ex cillum consecte\",\n  \"length\": 20683574\n}"
+							"body": "{\n  \"fact\": \"consectetur labore occaecat\",\n  \"length\": -87328438,\n  \"width\": -51165182\n}"
 						}
 					]
 				},
 				{
 					"name": "Get a list of facts",
-					"id": "d93dda8c-1122-4964-895f-4ffe6ba68de3",
+					"id": "95c57176-dc2d-4431-b8ad-494c85aec701",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -177,7 +173,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/facts?max_length=-55332469&limit=-55332469",
+							"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -188,12 +184,12 @@
 								{
 									"description": "length",
 									"key": "max_length",
-									"value": "-55332469"
+									"value": "20"
 								},
 								{
 									"description": "limit the amount of results returned",
 									"key": "limit",
-									"value": "-55332469"
+									"value": "10"
 								}
 							]
 						},
@@ -201,7 +197,7 @@
 					},
 					"response": [
 						{
-							"id": "096e4ad2-b0c7-494a-87b2-98681e71dab5",
+							"id": "0c458900-9688-4746-95f1-8d241f9414fe",
 							"name": "successful operation",
 							"originalRequest": {
 								"method": "GET",
@@ -213,7 +209,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/facts?max_length=-55332469&limit=-55332469",
+									"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -224,12 +220,12 @@
 										{
 											"description": "length",
 											"key": "max_length",
-											"value": "-55332469"
+											"value": "20"
 										},
 										{
 											"description": "limit the amount of results returned",
 											"key": "limit",
-											"value": "-55332469"
+											"value": "10"
 										}
 									]
 								}
@@ -244,10 +240,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"ex cillum consecte\",\n  \"length\": 20683574\n}"
+							"body": "[\n  {\n    \"fact\": \"labore in Duis aute\",\n    \"length\": 93467234,\n    \"width\": 14673633\n  },\n  {\n    \"fact\": \"consectetur pariatur quis velit\",\n    \"length\": 57268362,\n    \"width\": -74327718\n  }\n]"
 						},
 						{
-							"id": "6f024f01-f1a5-447a-a7b1-14b187bd076c",
+							"id": "f1f04e2c-18a6-4507-94eb-982db2b2c1d6",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -259,7 +255,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/facts?max_length=-55332469&limit=-55332469",
+									"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -270,12 +266,12 @@
 										{
 											"description": "length",
 											"key": "max_length",
-											"value": "-55332469"
+											"value": "20"
 										},
 										{
 											"description": "limit the amount of results returned",
 											"key": "limit",
-											"value": "-55332469"
+											"value": "10"
 										}
 									]
 								}
@@ -290,12 +286,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"ex cillum consecte\",\n  \"length\": 20683574\n}"
+							"body": "[\n  {\n    \"fact\": \"labore in Duis aute\",\n    \"length\": 93467234,\n    \"width\": 14673633\n  },\n  {\n    \"fact\": \"consectetur pariatur quis velit\",\n    \"length\": 57268362,\n    \"width\": -74327718\n  }\n]"
 						}
 					]
 				}
 			],
-			"id": "56d7f465-624b-4ea3-b04f-9bbddffa9c49",
+			"id": "43efaf93-04a8-49d5-bb43-3ca8475b01fe",
 			"description": "Cat Facts"
 		},
 		{
@@ -303,7 +299,7 @@
 			"item": [
 				{
 					"name": "Returns a list of breeds",
-					"id": "c8fbf612-907b-4867-a40b-125917fd93c5",
+					"id": "d7ba37f3-1360-4725-91a2-1bcd9d3530f9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -335,7 +331,7 @@
 					},
 					"response": [
 						{
-							"id": "8771d47a-73c0-4218-afd5-cfaa5b677c05",
+							"id": "24e3546f-b674-42fa-a501-69ed1898c40b",
 							"name": "Normal operation",
 							"originalRequest": {
 								"method": "GET",
@@ -373,10 +369,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"breed\": \"magna sit dolor\",\n  \"country\": \"des\",\n  \"origin\": \"nulla anim velit ea quis\",\n  \"coat\": \"reprehenderit consectetur eiusmod\",\n  \"pattern\": \"nisi\"\n}"
+							"body": "[\n  {\n    \"breed\": \"e\",\n    \"country\": \"consequat aute esse\",\n    \"origin\": \"ullamco\",\n    \"coat\": \"do in tempor\",\n    \"pattern\": \"Lorem cupidatat\"\n  },\n  {\n    \"breed\": \"pariatur voluptate officia\",\n    \"country\": \"ex adipisicing\",\n    \"origin\": \"re\",\n    \"coat\": \"la\",\n    \"pattern\": \"ip\"\n  }\n]"
 						},
 						{
-							"id": "2a246141-16e4-489b-8dc3-0b5b633f90ef",
+							"id": "4a0bf52a-8f59-4ee7-8180-45dec929c84f",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -414,12 +410,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"breed\": \"magna sit dolor\",\n  \"country\": \"des\",\n  \"origin\": \"nulla anim velit ea quis\",\n  \"coat\": \"reprehenderit consectetur eiusmod\",\n  \"pattern\": \"nisi\"\n}"
+							"body": "[\n  {\n    \"breed\": \"e\",\n    \"country\": \"consequat aute esse\",\n    \"origin\": \"ullamco\",\n    \"coat\": \"do in tempor\",\n    \"pattern\": \"Lorem cupidatat\"\n  },\n  {\n    \"breed\": \"pariatur voluptate officia\",\n    \"country\": \"ex adipisicing\",\n    \"origin\": \"re\",\n    \"coat\": \"la\",\n    \"pattern\": \"ip\"\n  }\n]"
 						}
 					]
 				}
 			],
-			"id": "fbbb2b6a-1935-4ccc-8afd-9b9c726e1978",
+			"id": "e31ec0d1-e202-4b46-a871-55db06ae6cdc",
 			"description": "Breeds"
 		}
 	],
@@ -440,7 +436,7 @@
 	},
 	"variable": [
 		{
-			"id": "2bbe234f-0c6d-4adb-ae18-663c2562d3f1",
+			"id": "02aca889-5b67-4006-96ad-c02393fbbc2d",
 			"key": "baseUrl",
 			"value": "https://catfact.ninja"
 		}

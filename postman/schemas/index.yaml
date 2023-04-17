@@ -1,16 +1,8 @@
 openapi: 3.0.0
-x-apiname: catFacts
-x-responsetime: 10000
 info:
   title: Cat Fact API
-  description: Cat Fact API
   contact:
-    email: admin@admin.com
-    url: https://catfact.ninja
-  license:
-    name: commons
-    url: https://catfact.ninja
-  termsOfService: yes
+    email: contact@catfact.ninja
   version: 1.0.0
 servers:
   - url: https://catfact.ninja
@@ -18,17 +10,15 @@ servers:
 paths:
   /breeds:
     get:
-      summary: Returns a list of breeds
       tags:
         - Breeds
-      description: Returns a list of breeds
+      description: Returns a a list of breeds
       operationId: getBreeds
       parameters:
         - name: limit
           in: query
           description: This is a description
           required: false
-          example: 10
           schema:
             type: integer
             format: int64
@@ -41,19 +31,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Breed'
-                $ref: '#/components/schemas/Breed'
-        '500':
-          description: Server Exception
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Breed'
-                $ref: '#/components/schemas/Breed'     
   /fact:
     get:
-      summary: Returns a random fact
       tags:
         - Facts
       description: Returns a random fact
@@ -71,19 +50,10 @@ paths:
           description: Normal response
           content:
             application/json:
-              example: 
-                fact: "A cat's normal pulse is 140-240 beats per minute, with an average of 195."
-                length: 73
               schema:
                 $ref: '#/components/schemas/CatFact'
         '404':
           description: Fact not found
-        '500':
-          description: Server Exception
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CatFact'
   /facts:
     get:
       tags:
@@ -93,7 +63,6 @@ paths:
       operationId: getFacts
       parameters:
         - name: max_length
-          description: length
           in: query
           required: false
           schema:
@@ -115,21 +84,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/CatFact'
-                $ref: '#/components/schemas/CatFact'
-        '500':
-          description: Server Exception
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/CatFact'
-                $ref: '#/components/schemas/CatFact'
 components:
-  securitySchemes:
-    BasicAuth:
-      type: http
-      scheme: basic
   schemas:
     Breed:
       title: Breed model
@@ -182,4 +137,4 @@ tags:
   - name: Breeds
     description: Breeds
 security:
-  - BasicAuth: []
+  - {}
