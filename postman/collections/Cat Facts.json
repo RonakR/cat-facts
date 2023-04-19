@@ -12,6 +12,30 @@
 			"item": [
 				{
 					"name": "get Random Fact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3f3fdcd7-831c-4834-8706-357ec74daa7b",
+								"exec": [
+									"pm.test(\"Validate Schema\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    // Check fact",
+									"    pm.expect(jsonData).to.have.property('fact');",
+									"    pm.expect(jsonData.fact).to.be.a(\"string\")",
+									"    // Check length",
+									"    pm.expect(jsonData).to.have.property('length');",
+									"    pm.expect(jsonData.length).to.be.a(\"number\")",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "736a3c7a-9fb5-4654-9af5-fde88a91ccbc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -34,9 +58,9 @@
 							],
 							"query": [
 								{
-									"description": "maximum length of returned fact",
 									"key": "max_length",
-									"value": "60279891"
+									"value": "60279891",
+									"description": "maximum length of returned fact"
 								}
 							]
 						},
