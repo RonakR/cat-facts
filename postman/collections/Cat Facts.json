@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "78d43573-559e-4fa4-8eb0-a82f523b7e87",
+		"name": "Cat Facts",
+		"description": "Contact Support:\n Email: contact@catfact.ninja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24492028-78d43573-559e-4fa4-8eb0-a82f523b7e87"
+	},
+	"item": [
+		{
+			"name": "Facts",
+			"item": [
+				{
+					"name": "get Random Fact",
+					"id": "fb872ece-9810-47bb-aa56-03db24e9d23e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/fact?max_length=47956850",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fact"
+							],
+							"query": [
+								{
+									"description": "maximum length of returned fact",
+									"key": "max_length",
+									"value": "47956850"
+								}
+							]
+						},
+						"description": "Returns a random fact"
+					},
+					"response": [
+						{
+							"id": "6e3586f6-a307-4b95-a7b2-864f853483bc",
+							"name": "Normal response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/fact?max_length=47956850",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									],
+									"query": [
+										{
+											"description": "maximum length of returned fact",
+											"key": "max_length",
+											"value": "47956850"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"laborum ullamco\",\n  \"length\": -31981330\n}"
+						},
+						{
+							"id": "a150fd33-bfe9-4ed4-a8af-4f4302d2e051",
+							"name": "Fact not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/fact?max_length=47956850",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									],
+									"query": [
+										{
+											"description": "maximum length of returned fact",
+											"key": "max_length",
+											"value": "47956850"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				},
+				{
+					"name": "Get a list of facts",
+					"id": "8bc6175a-94e2-4c6c-b3c3-4cac1e64f42f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/facts?max_length=47956850&limit=47956850",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"facts"
+							],
+							"query": [
+								{
+									"key": "max_length",
+									"value": "47956850"
+								},
+								{
+									"description": "limit the amount of results returned",
+									"key": "limit",
+									"value": "47956850"
+								}
+							]
+						},
+						"description": "Returns a a list of facts"
+					},
+					"response": [
+						{
+							"id": "9fe3142a-f0df-41b2-8055-68ecde9c26c8",
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/facts?max_length=47956850&limit=47956850",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									],
+									"query": [
+										{
+											"key": "max_length",
+											"value": "47956850"
+										},
+										{
+											"description": "limit the amount of results returned",
+											"key": "limit",
+											"value": "47956850"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"fact\": \"cupidatat nostrud\",\n    \"length\": -61011916\n  },\n  {\n    \"fact\": \"consequ\",\n    \"length\": -73666583\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "2df702f2-c708-489c-874c-289ad54af893",
+			"description": "Cat Facts"
+		},
+		{
+			"name": "Breeds",
+			"item": [
+				{
+					"name": "get Breeds",
+					"id": "34573739-196c-4f94-8be1-41c32aef3b06",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/breeds?limit=47956850",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"breeds"
+							],
+							"query": [
+								{
+									"description": "This is a description",
+									"key": "limit",
+									"value": "47956850"
+								}
+							]
+						},
+						"description": "Returns a a list of breeds"
+					},
+					"response": [
+						{
+							"id": "4209842e-7158-4024-aad3-661c38aae47b",
+							"name": "Normal operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/breeds?limit=47956850",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									],
+									"query": [
+										{
+											"description": "This is a description",
+											"key": "limit",
+											"value": "47956850"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"breed\": \"fugiat veli\",\n    \"country\": \"eiusmod in Excepteur\",\n    \"origin\": \"consequat eu adipi\",\n    \"coat\": \"mollit\",\n    \"pattern\": \"aute tempor elit\"\n  },\n  {\n    \"breed\": \"eiusmod minim ut\",\n    \"country\": \"anim ipsum eu id\",\n    \"origin\": \"aliqua veniam ipsum dolor amet\",\n    \"coat\": \"Ut\",\n    \"pattern\": \"in\"\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "757ba32c-7b3e-4dab-b15b-917e40d28325",
+			"description": "Breeds"
+		}
+	],
+	"variable": [
+		{
+			"id": "f0503f59-9875-4f9d-be95-469487a205fe",
+			"key": "baseUrl",
+			"value": "https://catfact.ninja"
+		}
+	]
+}
