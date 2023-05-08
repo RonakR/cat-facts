@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "81c13132-c79c-41ca-80c6-a1ea2a5f0eb9",
+		"name": "Cat Facts",
+		"description": "Cat Fact API\n\nContact Support:\n Name: Test\n Email: admin@admin.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24492028-81c13132-c79c-41ca-80c6-a1ea2a5f0eb9"
+	},
+	"item": [
+		{
+			"name": "Facts",
+			"item": [
+				{
+					"name": "Returns a random fact",
+					"id": "090468ab-3c95-4045-b5e9-f13eb0714d1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/fact",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fact"
+							]
+						},
+						"description": "Returns a random fact"
+					},
+					"response": [
+						{
+							"id": "c7bb18a9-1582-4af0-a214-0af63e77fa92",
+							"name": "Normal response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"A cat's normal pulse is 140-240 beats per minute, with an average of 195.\",\n  \"length\": 73,\n  \"width\": 42\n}"
+						},
+						{
+							"id": "b54090ed-7e92-4c40-b1ca-8b9e360bfaf8",
+							"name": "Fact not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						},
+						{
+							"id": "c497dec4-5e32-4b63-a3ae-47225cd4d327",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"anim elit labore aliqua\",\n  \"length\": -3977936,\n  \"width\": 5518759\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a list of facts",
+					"id": "c9ed560e-343f-480f-b1bf-5240ce9e7341",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"facts"
+							],
+							"query": [
+								{
+									"description": "length",
+									"key": "max_length",
+									"value": "20"
+								},
+								{
+									"description": "limit the amount of results returned",
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Returns a a list of facts"
+					},
+					"response": [
+						{
+							"id": "2e39cb9c-9c59-4761-bdaa-69eb4ffdaba7",
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									],
+									"query": [
+										{
+											"description": "length",
+											"key": "max_length",
+											"value": "20"
+										},
+										{
+											"description": "limit the amount of results returned",
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"fact\": \"dolore aliquip culpa in\",\n    \"length\": 96027872,\n    \"width\": 4351481\n  },\n  {\n    \"fact\": \"magna dolor eu\",\n    \"length\": 56112973,\n    \"width\": 22737534\n  }\n]"
+						},
+						{
+							"id": "ffca5976-1ada-4aad-ae43-0fbfb3e19032",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									],
+									"query": [
+										{
+											"description": "length",
+											"key": "max_length",
+											"value": "20"
+										},
+										{
+											"description": "limit the amount of results returned",
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"fact\": \"dolore aliquip culpa in\",\n    \"length\": 96027872,\n    \"width\": 4351481\n  },\n  {\n    \"fact\": \"magna dolor eu\",\n    \"length\": 56112973,\n    \"width\": 22737534\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "4e6cfeb9-18ae-4b39-bf0c-bca77599c155",
+			"description": "Cat Facts"
+		},
+		{
+			"name": "Breeds",
+			"item": [
+				{
+					"name": "Returns a list of breeds",
+					"id": "70410907-83cc-476d-98c8-de1ae2f8fe66",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/breeds?limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"breeds"
+							],
+							"query": [
+								{
+									"description": "This is a description",
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Returns a list of breeds"
+					},
+					"response": [
+						{
+							"id": "802ab9c7-ce3d-46c1-98cb-4cea171ad1f2",
+							"name": "Normal operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds?limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									],
+									"query": [
+										{
+											"description": "This is a description",
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"breed\": \"commodo minim ipsum\",\n    \"country\": \"sit esse\",\n    \"origin\": \"magna sint occaecat Ut id\",\n    \"coat\": \"sed\",\n    \"pattern\": \"id laborum Duis sunt\"\n  },\n  {\n    \"breed\": \"amet aliqua exercitation\",\n    \"country\": \"eu consectetur adipisicing\",\n    \"origin\": \"sint cupidatat laboris Du\",\n    \"coat\": \"elit minim sit ullamco anim\",\n    \"pattern\": \"non\"\n  }\n]"
+						},
+						{
+							"id": "92b3249a-47f3-4af0-ab91-caf6ddf5d735",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds?limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									],
+									"query": [
+										{
+											"description": "This is a description",
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"breed\": \"commodo minim ipsum\",\n    \"country\": \"sit esse\",\n    \"origin\": \"magna sint occaecat Ut id\",\n    \"coat\": \"sed\",\n    \"pattern\": \"id laborum Duis sunt\"\n  },\n  {\n    \"breed\": \"amet aliqua exercitation\",\n    \"country\": \"eu consectetur adipisicing\",\n    \"origin\": \"sint cupidatat laboris Du\",\n    \"coat\": \"elit minim sit ullamco anim\",\n    \"pattern\": \"non\"\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "75435061-5db7-4844-8e4b-070de6bc99fa",
+			"description": "Breeds"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{basicAuthUsername}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{basicAuthPassword}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "bed05efa-ed72-424f-bb54-ffeade89846d",
+			"key": "baseUrl",
+			"value": "https://catfact.ninja"
+		}
+	]
+}
