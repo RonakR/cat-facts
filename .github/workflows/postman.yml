@@ -9,7 +9,7 @@ jobs:
       - name: Build Application
         run: |
           # Build application
-   api-governance-tests:
+  api-governance-tests:
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v3
