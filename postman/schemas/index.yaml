@@ -45,7 +45,7 @@ paths:
         '500':
           description: Server Exception
           content:
-            application/problem+json:
+            application/json:
               schema:
                 type: object
                 items:
