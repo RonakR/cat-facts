@@ -2,7 +2,7 @@ openapi: 3.0.0
 x-apiname: catFacts
 x-responsetime: 10000
 info:
-  title: Cat Fact API
+  title: Cat Fact APIs
   description: Cat Fact API
   contact:
     name: Ronak
