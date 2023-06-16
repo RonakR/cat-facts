@@ -32,5 +32,5 @@ jobs:
         run: |
           postman api publish d8ca5dcb-e407-4348-9f39-3daf3cf00119 \
           --name "${{needs.parse-api-version.outputs.api-version}}" \
-          --collections "${{ github.workspace }}/postman/collections/Cat Facts.json" \
-          --api-definition "${{ github.workspace }}/postman/schemas/index.yaml"
+          --collections "postman/collections/Cat Facts.json" \
+          --api-definition "postman/schemas/index.yaml"
