@@ -29,6 +29,7 @@ jobs:
       - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Publish API
-        run: postman api publish d8ca5dcb-e407-4348-9f39-3daf3cf00119 --name "${{needs.parse-api-version.outputs.api-version}}" \ 
-            --collections "${{ github.workspace }}/postman/collections/Cat Facts.json" \ 
-            --api-definition "${{ github.workspace }}/postman/schemas/index.yaml"
+        run: postman api publish d8ca5dcb-e407-4348-9f39-3daf3cf00119 \
+             --name "${{needs.parse-api-version.outputs.api-version}}" \ 
+             --collections "${{ github.workspace }}/postman/collections/Cat Facts.json" \ 
+             --api-definition "${{ github.workspace }}/postman/schemas/index.yaml"
