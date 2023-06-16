@@ -12,13 +12,10 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Install yq
-        uses: mikefarah/yq@master
-
-      - name: Get API Version from Spec
         id: parse-api-version
-        run: |
-          yq '.info.version' ${{ github.workspace }}/postman/schemas/index.yaml | read result
-          echo result
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq '.info.version' postman/schemas/index.yaml
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
