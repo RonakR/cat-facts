@@ -1,0 +1,36 @@
+name: Publish to Private API Network
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  parse-api-version:
+    runs-on: ubuntu-latest
+    outputs:
+      api-version: ${{ steps.parse-api-version.outputs.result }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install yq
+        id: parse-api-version
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq '.info.version' postman/schemas/index.yaml
+      - name: Print API Version
+        run: echo ${{ steps.parse-api-version.outputs.result }}
+  publish-api:
+    needs: [parse-api-version]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Postman CLI
+        run: |
+         curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+      - name: Login to Postman CLI
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+      - name: Publish API
+        run: |
+          postman api publish d8ca5dcb-e407-4348-9f39-3daf3cf00119 \
+          --name "${{needs.parse-api-version.outputs.api-version}}" \ 
+          --collections "${{ github.workspace }}/postman/collections/Cat Facts.json" \ 
+          --api-definition "${{ github.workspace }}/postman/schemas/index.yaml"
