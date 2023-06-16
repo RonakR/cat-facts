@@ -12,7 +12,7 @@ info:
     name: commons
     url: https://catfact.ninja
   termsOfService: yes
-  version: 1.0.0
+  version: 3.0.0
 servers:
   - url: https://catfact.ninja
     description: prod
