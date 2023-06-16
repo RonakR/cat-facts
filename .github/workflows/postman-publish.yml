@@ -15,7 +15,7 @@ jobs:
         id: parse-api-version
         uses: mikefarah/yq@master
         with:
-          cmd: yq '.info.version' "${{ github.workspace }}/postman/schemas/index.yaml"
+          cmd: yq '.info.version' ${{ github.workspace }}/postman/schemas/index.yaml
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
