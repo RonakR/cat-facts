@@ -16,7 +16,7 @@ jobs:
 
       - name: Get API Version from Spec
         id: parse-api-version
-        run: yq '.info.version' ${{ github.workspace }}/postman/schemas/index.yaml
+        run: yq '.info.version' ${{ github.workspace }}/postman/schemas/index.yaml >> "$GITHUB_OUTPUT"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
