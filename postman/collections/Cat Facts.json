@@ -11,7 +11,7 @@
 			"name": "Facts",
 			"item": [
 				{
-					"name": "get Random Fact",
+					"name": "Returns a random fact",
 					"event": [
 						{
 							"listen": "test",
@@ -53,7 +53,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/fact?max_length=1345022",
+							"raw": "{{baseUrl}}/fact",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -64,7 +64,8 @@
 								{
 									"description": "maximum length of returned fact",
 									"key": "max_length",
-									"value": "1345022"
+									"value": "1345022",
+									"disabled": true
 								}
 							]
 						},
@@ -139,6 +140,44 @@
 							"_postman_previewlanguage": "text",
 							"header": [],
 							"cookie": []
+						},
+						{
+							"id": "892eec9e-cdab-4d6c-8fd5-07a170e63318",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"tempor in anim\",\n  \"length\": 21409598,\n  \"width\": 59372756\n}"
 						}
 					]
 				},
@@ -221,7 +260,45 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"fact\": \"qui proident\",\n    \"length\": -59189918\n  },\n  {\n    \"fact\": \"fugiat dolor ut Lorem cupidatat\",\n    \"length\": -79869179\n  }\n]"
+							"body": "{}"
+						},
+						{
+							"id": "7ecbbd70-3a8f-42dc-b8ca-38f757b5fa9b",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				}
@@ -233,7 +310,7 @@
 			"name": "Breeds",
 			"item": [
 				{
-					"name": "get Breeds",
+					"name": "Returns a list of breeds",
 					"id": "5779e401-dedb-4532-b87a-50ebaf437b1e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -303,7 +380,45 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"breed\": \"esse magna deserunt\",\n    \"country\": \"ipsum\",\n    \"origin\": \"dolor sed dolore dolor commodo\",\n    \"coat\": \"sed consequat ullamco in nisi\",\n    \"pattern\": \"fugiat nulla\"\n  },\n  {\n    \"breed\": \"Ut\",\n    \"country\": \"Duis am\",\n    \"origin\": \"aliquip\",\n    \"coat\": \"sit veniam aliquip\",\n    \"pattern\": \"non aliq\"\n  }\n]"
+							"body": "{}"
+						},
+						{
+							"id": "a7cd98db-1f22-4c9e-89f8-18cd16ee6860",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				}
