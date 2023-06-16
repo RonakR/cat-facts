@@ -34,5 +34,4 @@ jobs:
           --name "${{needs.parse-api-version.outputs.api-version}}" \
           --release-notes "#Version: ${{needs.parse-api-version.outputs.api-version}}"\
           --collections "postman/collections/Cat Facts.json" \
-          --api-definition "postman/schemas/index.yaml"
 
