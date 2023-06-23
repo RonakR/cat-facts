@@ -11,7 +11,7 @@
 			"name": "Facts",
 			"item": [
 				{
-					"name": "Returns a random fact",
+					"name": "get Random Fact",
 					"event": [
 						{
 							"listen": "test",
@@ -49,7 +49,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/fact",
+							"raw": "{{baseUrl}}/fact?max_length=-39737428",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -60,8 +60,7 @@
 								{
 									"description": "maximum length of returned fact",
 									"key": "max_length",
-									"value": "-39737428",
-									"disabled": true
+									"value": "-39737428"
 								}
 							]
 						},
@@ -133,44 +132,6 @@
 							"_postman_previewlanguage": "text",
 							"header": [],
 							"cookie": []
-						},
-						{
-							"id": "5ff36e4b-79b9-4a2b-8c9a-47efacab7148",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/fact",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"fact"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"fact\": \"qui elit Excepteur culpa\",\n  \"length\": -71721866,\n  \"width\": 90056165\n}"
 						}
 					]
 				},
@@ -260,45 +221,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{}"
-						},
-						{
-							"id": "ef27eefe-8eb0-4f41-8c7d-7972e81defb9",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/facts",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"facts"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{}"
+							"body": "[\n  {\n    \"fact\": \"Ut\",\n    \"length\": 46600285\n  },\n  {\n    \"fact\": \"in culpa deserunt m\",\n    \"length\": 15175611\n  }\n]"
 						}
 					]
 				}
@@ -385,45 +308,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{}"
-						},
-						{
-							"id": "898acc73-09ca-4d09-94cf-0bb8c93c6518",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/breeds",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"breeds"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{}"
+							"body": "[\n  {\n    \"breed\": \"non nulla exercit\",\n    \"country\": \"dolore sit magna\",\n    \"origin\": \"reprehenderit in exercitation\",\n    \"coat\": \"in incididunt non\",\n    \"pattern\": \"enim\"\n  },\n  {\n    \"breed\": \"esse\",\n    \"country\": \"ad\",\n    \"origin\": \"in amet\",\n    \"coat\": \"nisi elit dolor in\",\n    \"pattern\": \"pariatur minim quis\"\n  }\n]"
 						}
 					]
 				}
