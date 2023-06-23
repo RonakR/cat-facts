@@ -310,7 +310,7 @@
 			"name": "Breeds",
 			"item": [
 				{
-					"name": "Returns a list of breeds",
+					"name": "get Breeds",
 					"id": "59b58c0a-e890-4d59-8203-21f84cfa5506",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true

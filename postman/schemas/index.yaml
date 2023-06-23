@@ -2,6 +2,7 @@ openapi: 3.0.0
 x-apiname: catFacts
 x-responsetime: 10000
 info:
+  title: Cat Facts API
   contact:
     name: Ronak
     email: admin@admin.com
@@ -20,7 +21,7 @@ info:
     Its comprehensive collection of adorable cat-related statistics and blurbs about all things felines is sure to keep you entertained for hours.
     The cat facts range from interesting and informative to adorable and heartwarming.
     Each cat fact is accompanied by an accompanying image which, for maximum cuteness factor, is usually a picture of a cat, or a cat themed item.
-    So, whether you're looking for something to share on social media, or you just need a smile in your day, this API is sure to provide you with lots of kitty cuteness and fun facts.
+    So, whether you’re looking for something to share on social media, or you just need a smile in your day, this API is sure to provide you with lots of kitty cuteness and fun facts.
 
     # API Reference
 servers:
@@ -29,7 +30,6 @@ servers:
 paths:
   /breeds:
     get:
-      summary: Returns a list of breeds
       tags:
         - Breeds
       description: Returns a list of breeds
