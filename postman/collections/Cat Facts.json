@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "3af3f40c-9fda-4e75-8bcd-47e39bc3a857",
+		"_postman_id": "2ea24cf7-f27a-4cae-be6e-7c19140f91f1",
 		"name": "Cat Facts",
 		"description": "**The Cat Facts API allows you to programmatically access facts about felines over the internet.** \n\nThis API returns cat facts that make pussycat lovers giggle with delight. \nThis API provides random cat facts, interesting trivia about cats, and funny sayings about cats.\nWhether you're looking for fun cat facts to share on your Twitter feed, or you need a quick laugh while scrolling through your feed, this API will provide you with plenty of material.\nIts comprehensive collection of adorable cat-related statistics and blurbs about all things felines is sure to keep you entertained for hours.\nThe cat facts range from interesting and informative to adorable and heartwarming.\nEach cat fact is accompanied by an accompanying image which, for maximum cuteness factor, is usually a picture of a cat, or a cat themed item.\nSo, whether you're looking for something to share on social media, or you just need a smile in your day, this API is sure to provide you with lots of kitty cuteness and fun facts.\n\n# API Reference\n\nContact Support:\n Name: Ronak\n Email: admin@admin.com",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "24492028-3af3f40c-9fda-4e75-8bcd-47e39bc3a857"
+		"_uid": "24492028-2ea24cf7-f27a-4cae-be6e-7c19140f91f1"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "de6fde95-bfc6-4da3-bb61-762c0175ca62",
+								"id": "18db8614-1e04-47e4-ba86-42c5637b19ef",
 								"exec": [
 									"pm.test(\"Validate Schema\", function () {",
 									"    var jsonData = pm.response.json();",
@@ -36,7 +36,7 @@
 							}
 						}
 					],
-					"id": "58386862-8fa1-42b0-abd6-bf3047f23116",
+					"id": "88ad30a0-46b0-4d36-ad09-2aee6a229571",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -61,7 +61,7 @@
 					},
 					"response": [
 						{
-							"id": "9046c226-9287-4fd5-b792-d9ea027ce6d2",
+							"id": "bc32636e-4084-478a-a038-c84ce440cec7",
 							"name": "Normal response",
 							"originalRequest": {
 								"method": "GET",
@@ -99,7 +99,7 @@
 							"body": "{\n  \"fact\": \"A cat's normal pulse is 140-240 beats per minute, with an average of 195.\",\n  \"length\": 73,\n  \"width\": 42\n}"
 						},
 						{
-							"id": "54aefa26-fe41-4db8-9262-df6f466ddb1a",
+							"id": "8c5c4a93-b3ee-43fb-93fc-6de5521d97b5",
 							"name": "Fact not found",
 							"originalRequest": {
 								"method": "GET",
@@ -127,7 +127,7 @@
 							"cookie": []
 						},
 						{
-							"id": "b0803987-7a11-4686-9cc7-e0bb04e2e38e",
+							"id": "d79eab7a-029b-432b-94d9-10574719c497",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -162,13 +162,13 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"eu dolo\",\n  \"length\": -16765647,\n  \"width\": -17808928\n}"
+							"body": "{\n  \"fact\": \"magna ea dolore\",\n  \"length\": 70394163,\n  \"width\": -69368262\n}"
 						}
 					]
 				},
 				{
 					"name": "Get a list of facts",
-					"id": "502e2621-e5bd-4a20-aeea-1e157062142e",
+					"id": "e7de5cab-1616-4101-879a-9af6bb2f81c4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -205,7 +205,7 @@
 					},
 					"response": [
 						{
-							"id": "f1da2e66-0345-4cf6-b019-c88b7bea7ca6",
+							"id": "2d3576d1-d04d-42dd-aa1f-5e8c1bcf8598",
 							"name": "successful operation",
 							"originalRequest": {
 								"method": "GET",
@@ -255,7 +255,7 @@
 							"body": "{}"
 						},
 						{
-							"id": "03bf3d52-e300-4010-a74a-0cdb99f86630",
+							"id": "573976be-917f-4155-8c56-3cc25e7cb64c",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -307,7 +307,7 @@
 					]
 				}
 			],
-			"id": "5efbd124-5732-44ea-ba77-d0bdc2157fed",
+			"id": "c184640b-dadc-4c8e-869a-eab0e12a94fb",
 			"description": "Cat Facts"
 		},
 		{
@@ -315,7 +315,7 @@
 			"item": [
 				{
 					"name": "Returns a list of breeds",
-					"id": "80eca232-f956-4806-af2c-a60a73bd4ca1",
+					"id": "ba971d1d-62e7-4aac-9b02-fb6703eedda4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -347,7 +347,7 @@
 					},
 					"response": [
 						{
-							"id": "af362f97-9019-45bf-9523-105966646476",
+							"id": "3aff8c53-22b9-457b-b209-40dcc4bc93bc",
 							"name": "Normal operation",
 							"originalRequest": {
 								"method": "GET",
@@ -392,7 +392,7 @@
 							"body": "{}"
 						},
 						{
-							"id": "4f2a7895-8fc4-4227-9b6e-8b8be27a75bb",
+							"id": "a6b88fe8-4143-491e-a25b-7ba15c279a77",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -439,7 +439,7 @@
 					]
 				}
 			],
-			"id": "028d1733-a211-48e7-8ec6-37d15c64cd33",
+			"id": "946dc3cb-a1fc-4646-87db-e17f804e5d66",
 			"description": "Breeds"
 		}
 	],
@@ -460,7 +460,7 @@
 	},
 	"variable": [
 		{
-			"id": "5895aec4-e2d3-436c-bdb6-34f8cd4562d6",
+			"id": "8b67c941-6268-46c6-bda8-46d91cf72815",
 			"key": "baseUrl",
 			"value": "https://catfact.ninja"
 		}
