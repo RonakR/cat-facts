@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "340f359b-ecdf-478f-baad-fc77c1f14db1",
+		"name": "Cat Facts",
+		"description": "**The Cat Facts API allows you to programmatically access facts about felines over the internet.** \n\nThis API returns cat facts that make pussycat lovers giggle with delight. \nThis API provides random cat facts, interesting trivia about cats, and funny sayings about cats.\nWhether you're looking for fun cat facts to share on your Twitter feed, or you need a quick laugh while scrolling through your feed, this API will provide you with plenty of material.\nIts comprehensive collection of adorable cat-related statistics and blurbs about all things felines is sure to keep you entertained for hours.\nThe cat facts range from interesting and informative to adorable and heartwarming.\nEach cat fact is accompanied by an accompanying image which, for maximum cuteness factor, is usually a picture of a cat, or a cat themed item.\nSo, whether you're looking for something to share on social media, or you just need a smile in your day, this API is sure to provide you with lots of kitty cuteness and fun facts.\n\n# API Reference\n\nContact Support:\n Name: Ronak\n Email: admin@admin.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24492028-340f359b-ecdf-478f-baad-fc77c1f14db1"
+	},
+	"item": [
+		{
+			"name": "Facts",
+			"item": [
+				{
+					"name": "Returns a random fact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "353cdf87-5fe2-4d71-b0a3-abee68525b6e",
+								"exec": [
+									"pm.test(\"Validate Schema\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    // Check fact",
+									"    pm.expect(jsonData).to.have.property('fact');",
+									"    pm.expect(jsonData.fact).to.be.a(\"string\")",
+									"    // Check length",
+									"    pm.expect(jsonData).to.have.property('length');",
+									"    pm.expect(jsonData.length).to.be.a(\"number\")",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "70d7891f-860a-45cf-8441-894a5f4662ae",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/fact",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fact"
+							]
+						},
+						"description": "Returns a random fact"
+					},
+					"response": [
+						{
+							"id": "dfaca425-c94b-4f58-987b-a74e5b3591f9",
+							"name": "Normal response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"A cat's normal pulse is 140-240 beats per minute, with an average of 195.\",\n  \"length\": 73,\n  \"width\": 42\n}"
+						},
+						{
+							"id": "b7087a7d-9244-4a70-94ad-bf08bdaa02d5",
+							"name": "Fact not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						},
+						{
+							"id": "f5b3b150-dc4f-4760-97bb-090032937377",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"tempor laboris\",\n  \"length\": -15714071,\n  \"width\": 75208017\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a list of facts",
+					"id": "2b695a28-4170-41eb-9f4d-a93339ed43ee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"facts"
+							],
+							"query": [
+								{
+									"description": "length",
+									"key": "max_length",
+									"value": "20"
+								},
+								{
+									"description": "limit the amount of results returned",
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Returns a a list of facts"
+					},
+					"response": [
+						{
+							"id": "46a4d599-24d0-44a4-b1e3-1621e1856fed",
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									],
+									"query": [
+										{
+											"description": "length",
+											"key": "max_length",
+											"value": "20"
+										},
+										{
+											"description": "limit the amount of results returned",
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "3a08e115-9dcc-416a-9d7a-84527808d368",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts?max_length=20&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									],
+									"query": [
+										{
+											"description": "length",
+											"key": "max_length",
+											"value": "20"
+										},
+										{
+											"description": "limit the amount of results returned",
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				}
+			],
+			"id": "6272a995-a365-4cf0-8c51-73beaa51f82f",
+			"description": "Cat Facts"
+		},
+		{
+			"name": "Breeds",
+			"item": [
+				{
+					"name": "Returns a list of breeds",
+					"id": "16166ab5-60ff-438c-ab68-ecd00c2449a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/breeds?limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"breeds"
+							],
+							"query": [
+								{
+									"description": "This is a description",
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Returns a list of breeds"
+					},
+					"response": [
+						{
+							"id": "b642507c-012b-45a7-8096-2daf95bf93c0",
+							"name": "Normal operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds?limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									],
+									"query": [
+										{
+											"description": "This is a description",
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "574053b1-5cc3-4915-af09-57c7c2ae272e",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds?limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									],
+									"query": [
+										{
+											"description": "This is a description",
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				}
+			],
+			"id": "da14a05c-22a2-4303-bc2d-bc1ce5db8ec7",
+			"description": "Breeds"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{basicAuthUsername}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{basicAuthPassword}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "6e9e5323-eae1-46ae-aec5-4023f9993a0d",
+			"key": "baseUrl",
+			"value": "https://catfact.ninja"
+		}
+	]
+}
