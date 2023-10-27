@@ -9,12 +9,11 @@ id = d8ca5dcb-e407-4348-9f39-3daf3cf00119
 
 [config.relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"24492028-b259b34b-f1e9-4bd1-8cc6-a0301ddcc8f8","path":"Cat Facts.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Tags\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"requestParametersResolution\":\"Example\",\"updateCollectionSync\":true,\"exampleParametersResolution\":\"Example\"}"}}
+files[] = {"id":"24492028-f88f606b-ee1b-4e13-9785-43a41ffefa2d","path":"Cat Facts.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Tags\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"requestParametersResolution\":\"Example\",\"updateCollectionSync\":true,\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
 [config.relations.apiDefinition]
-rootDirectory = postman/schemas
 files[] = {"path":"postman/collections/Cat Facts.json","metaData":{}}
 files[] = {"path":"postman/schemas/index.yaml","metaData":{}}
 
