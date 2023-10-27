@@ -12,6 +12,30 @@
 			"item": [
 				{
 					"name": "Returns a random fact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7be3a4b-f1c4-444e-b8fd-69b743df2226",
+								"exec": [
+									"pm.test(\"Validate Schema\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    // Check fact",
+									"    pm.expect(jsonData).to.have.property('fact');",
+									"    pm.expect(jsonData.fact).to.be.a(\"string\")",
+									"    // Check length",
+									"    pm.expect(jsonData).to.have.property('length');",
+									"    pm.expect(jsonData.length).to.be.a(\"number\")",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "3c1ca55f-6ede-4b1d-8f82-f303596e67ab",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
