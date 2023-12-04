@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "cca029d6-f5ae-4d5b-8280-ebaf8acc6ab5",
+		"_postman_id": "b145d90f-e749-4991-a3f2-ef7f77c1055a",
 		"name": "Cat Facts",
 		"description": "**The Cat Facts API allows you to programmatically access facts about felines over the internet.** \n\nThis API returns cat facts that make pussycat lovers giggle with delight. \nThis API provides random cat facts, interesting trivia about cats, and funny sayings about cats.\nWhether you're looking for fun cat facts to share on your Twitter feed, or you need a quick laugh while scrolling through your feed, this API will provide you with plenty of material.\nIts comprehensive collection of adorable cat-related statistics and blurbs about all things felines is sure to keep you entertained for hours.\nThe cat facts range from interesting and informative to adorable and heartwarming.\nEach cat fact is accompanied by an accompanying image which, for maximum cuteness factor, is usually a picture of a cat, or a cat themed item.\nSo, whether you're looking for something to share on social media, or you just need a smile in your day, this API is sure to provide you with lots of kitty cuteness and fun facts.\n\n# API Reference\n\nContact Support:\n Name: Ronak\n Email: admin@admin.com",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "24492028-cca029d6-f5ae-4d5b-8280-ebaf8acc6ab5"
+		"_uid": "24492028-b145d90f-e749-4991-a3f2-ef7f77c1055a"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c086d2ec-1687-44d4-b24e-27adcefce7b7",
+								"id": "cf18955b-aded-498d-bdbf-0c2fdfc919da",
 								"exec": [
 									"pm.test(\"Validate Schema\", function () {",
 									"    var jsonData = pm.response.json();",
@@ -40,7 +40,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d528f97f-5ad9-45f6-9207-88a708d0bcd6",
+								"id": "ea3e6a44-700e-4afe-85dd-11d0067fbee7",
 								"exec": [
 									""
 								],
@@ -48,7 +48,7 @@
 							}
 						}
 					],
-					"id": "408f04d6-1a6e-425e-af5a-86f27a57e900",
+					"id": "6edc7cee-ecab-4384-ad34-fb9a7c42b5f0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -73,7 +73,7 @@
 					},
 					"response": [
 						{
-							"id": "7b9b042e-35ae-4a82-b37b-c96d961782c8",
+							"id": "2209562e-afc2-48c4-bf00-ad7ba316c0c4",
 							"name": "Normal response",
 							"originalRequest": {
 								"method": "GET",
@@ -101,6 +101,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -111,7 +112,7 @@
 							"body": "{\n  \"fact\": \"A cat's normal pulse is 140-240 beats per minute, with an average of 195.\",\n  \"length\": 73,\n  \"width\": 42\n}"
 						},
 						{
-							"id": "91c52e56-1aa8-4b7c-865c-ad4eecba684b",
+							"id": "a5f4d5fd-8d8a-4e7a-b98b-5998d1eda5e3",
 							"name": "Fact not found",
 							"originalRequest": {
 								"method": "GET",
@@ -135,11 +136,12 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "text",
+							"_postman_previewtype": "html",
 							"header": [],
 							"cookie": []
 						},
 						{
-							"id": "680009d9-b40a-46db-84f4-f1bebf7f6406",
+							"id": "ac165ff9-074e-45e4-b6d2-736ecd3f3c7c",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -167,6 +169,7 @@
 							"status": "Internal Server Error",
 							"code": 500,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -180,7 +183,7 @@
 				},
 				{
 					"name": "Get a list of facts",
-					"id": "da34dbb5-3da3-4bd1-9a92-501d61b24d6f",
+					"id": "4b86e137-6e8a-4605-86bc-d50a032cb883",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -217,7 +220,7 @@
 					},
 					"response": [
 						{
-							"id": "25eef8b5-6c3f-4a30-ad0b-0fc030434869",
+							"id": "ae174d3e-db2e-44aa-bf8a-5419bb9aa2e7",
 							"name": "successful operation",
 							"originalRequest": {
 								"method": "GET",
@@ -257,6 +260,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -267,7 +271,7 @@
 							"body": "{}"
 						},
 						{
-							"id": "3f0de423-7238-4cca-bf01-63f874ac3ec1",
+							"id": "f07214f0-f579-4bb2-9496-2c09c99140b5",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -307,6 +311,7 @@
 							"status": "Internal Server Error",
 							"code": 500,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -319,7 +324,7 @@
 					]
 				}
 			],
-			"id": "4f97ea62-72e3-459f-ab26-c2ed6b86a58c",
+			"id": "e475dd16-24c9-4e04-a835-d049891d2876",
 			"description": "Cat Facts"
 		},
 		{
@@ -327,7 +332,7 @@
 			"item": [
 				{
 					"name": "Returns a list of breeds",
-					"id": "a80d01c9-b74d-49d9-ab14-e14355e7cee4",
+					"id": "73b802e8-fbd1-4074-bd3a-8f44dc0f2f40",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -359,7 +364,7 @@
 					},
 					"response": [
 						{
-							"id": "8d2f9825-4ec5-4b96-b82d-33fb8d5b4689",
+							"id": "3ff1dfa2-e15a-43f8-a6b6-fd392507ee59",
 							"name": "Normal operation",
 							"originalRequest": {
 								"method": "GET",
@@ -394,6 +399,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -404,7 +410,7 @@
 							"body": "{}"
 						},
 						{
-							"id": "499afb05-6c67-4cab-8e25-b2a28fa949f9",
+							"id": "35fe9de5-238c-4ed9-95be-fb195186764e",
 							"name": "Server Exception",
 							"originalRequest": {
 								"method": "GET",
@@ -439,6 +445,7 @@
 							"status": "Internal Server Error",
 							"code": 500,
 							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "html",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -451,7 +458,7 @@
 					]
 				}
 			],
-			"id": "edd6e26e-e909-4c5e-9435-e417d0c431ea",
+			"id": "6b78c32b-6b25-4f0e-bffe-6be284c6178e",
 			"description": "Breeds"
 		}
 	],
