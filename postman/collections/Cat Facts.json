@@ -61,12 +61,19 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/fact",
+							"raw": "{{baseUrl}}/fact?POSTMAN_API_KEY={{POSTMAN_API_KEY}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"fact"
+							],
+							"query": [
+								{
+									"key": "POSTMAN_API_KEY",
+									"value": "{{POSTMAN_API_KEY}}",
+									"type": "text"
+								}
 							]
 						},
 						"description": "Returns a random fact"
