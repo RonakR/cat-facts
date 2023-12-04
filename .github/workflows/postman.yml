@@ -49,7 +49,7 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "${{ github.workspace }}/postman/collections/Cat Facts.json" \
-            --env-var "POSTMAN_API_KEY=test-key" \
+            --env-var "POSTMAN_API_KEY=${{ secrets.POSTMAN_API_KEY }}" \
             --integration-id "137029-${{ github.run_id }}"
   deploy:
     needs: [unit-tests, api-contract-tests]
