@@ -477,11 +477,39 @@
 			}
 		]
 	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "92f20b6c-87de-4120-9f58-a5e8a930464f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fe35bb1c-cbbf-4ccf-8298-0c2025111b3a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
-			"id": "4b1684fb-dc87-40d9-b10d-4cb118bc0854",
+			"id": "bf1b33f8-b744-4929-99d8-856a968e69cc",
 			"key": "baseUrl",
 			"value": "https://catfact.ninja"
+		},
+		{
+			"id": "142d6297-8076-4d44-8f3d-99754f0b664b",
+			"key": "POSTMAN_API_KEY",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
