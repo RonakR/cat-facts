@@ -30,7 +30,19 @@
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});"
+									"});",
+									"",
+									"console.log('POSTMAN_API_KEY', pm.environment.get(POSTMAN_API_KEY))"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d528f97f-5ad9-45f6-9207-88a708d0bcd6",
+								"exec": [
+									""
 								],
 								"type": "text/javascript"
 							}
