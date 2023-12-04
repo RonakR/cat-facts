@@ -32,7 +32,7 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"console.log('POSTMAN_API_KEY', pm.environment.get(\"POSTMAN_API_KEY\"))"
+									"console.log('POSTMAN_API_KEY', pm.variables.get(\"POSTMAN_API_KEY\"))"
 								],
 								"type": "text/javascript"
 							}
@@ -71,8 +71,7 @@
 							"query": [
 								{
 									"key": "POSTMAN_API_KEY",
-									"value": "{{POSTMAN_API_KEY}}",
-									"type": "text"
+									"value": "{{POSTMAN_API_KEY}}"
 								}
 							]
 						},
@@ -501,12 +500,12 @@
 	],
 	"variable": [
 		{
-			"id": "bf1b33f8-b744-4929-99d8-856a968e69cc",
+			"id": "cf592b58-d8dd-4d8d-85c6-24e6b7606a30",
 			"key": "baseUrl",
 			"value": "https://catfact.ninja"
 		},
 		{
-			"id": "142d6297-8076-4d44-8f3d-99754f0b664b",
+			"id": "0cc330de-7df5-4f55-ba6b-f37dc0834ddf",
 			"key": "POSTMAN_API_KEY",
 			"value": "",
 			"type": "string"
