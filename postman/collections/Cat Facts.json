@@ -32,7 +32,7 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"console.log('POSTMAN_API_KEY', pm.environment.get(\"POSTMAN_API_KEY\"))"
+									"console.log('POSTMAN_API_KEY', pm.variables.get(\"POSTMAN_API_KEY\"))"
 								],
 								"type": "text/javascript"
 							}
