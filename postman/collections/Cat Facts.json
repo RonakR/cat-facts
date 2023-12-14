@@ -11,7 +11,7 @@
 			"name": "Facts",
 			"item": [
 				{
-					"name": "get Random Fact",
+					"name": "Returns a random fact",
 					"id": "0fe7d05c-92dc-4f75-bab3-c12be5802a6e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -25,7 +25,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/fact?max_length=-91678737",
+							"raw": "{{baseUrl}}/fact",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -36,7 +36,8 @@
 								{
 									"description": "maximum length of returned fact",
 									"key": "max_length",
-									"value": "-91678737"
+									"value": "-91678737",
+									"disabled": true
 								}
 							]
 						},
@@ -81,7 +82,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"ea reprehenderit officia\",\n  \"length\": 46673989\n}"
+							"body": "{\n  \"fact\": \"ea reprehenderit officia\",\n  \"length\": 46673989,\n  \"width\": 84281213\n}"
 						},
 						{
 							"id": "165efcf1-04e4-4ce8-aaee-7889c26da38c",
@@ -111,6 +112,44 @@
 							"_postman_previewlanguage": "text",
 							"header": [],
 							"cookie": []
+						},
+						{
+							"id": "1ed4cb73-6244-43e9-98a9-7b5080f3b352",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"sit do enim ut\",\n  \"length\": 71070570,\n  \"width\": 90535965\n}"
 						}
 					]
 				},
@@ -193,7 +232,45 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"fact\": \"culpa reprehenderit non quis in\",\n    \"length\": 31412049\n  },\n  {\n    \"fact\": \"cillum dolore d\",\n    \"length\": 63761243\n  }\n]"
+							"body": "{}"
+						},
+						{
+							"id": "1e580d62-a71e-4414-a112-c5f881eb88c2",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				}
@@ -205,7 +282,7 @@
 			"name": "Breeds",
 			"item": [
 				{
-					"name": "get Breeds",
+					"name": "Returns a list of breeds",
 					"id": "2b4fb0cd-91b7-4bdf-ac8f-52abb8a9f916",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -275,7 +352,45 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"breed\": \"eiusmod nisi eu\",\n    \"country\": \"eu cillum minim\",\n    \"origin\": \"enim ea\",\n    \"coat\": \"reprehenderit non sint minim\",\n    \"pattern\": \"sed\"\n  },\n  {\n    \"breed\": \"et magna est quis\",\n    \"country\": \"sit\",\n    \"origin\": \"ad Duis sint veniam\",\n    \"coat\": \"minim cupidatat officia\",\n    \"pattern\": \"nisi enim adipisicing occaecat\"\n  }\n]"
+							"body": "{}"
+						},
+						{
+							"id": "cfe4e22f-1f20-4230-9f1d-00e24e361580",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				}
@@ -288,7 +403,8 @@
 		{
 			"id": "f4e0476d-b33c-43bc-813e-05a89f0992a0",
 			"key": "baseUrl",
-			"value": "https://catfact.ninja"
+			"value": "https://catfact.ninja",
+			"type": "any"
 		}
 	]
 }
