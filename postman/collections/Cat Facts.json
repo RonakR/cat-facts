@@ -11,7 +11,31 @@
 			"name": "Facts",
 			"item": [
 				{
-					"name": "get Random Fact",
+					"name": "Returns a random fact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f4e8746d-8dc0-47f2-a622-a0fbdf609233",
+								"exec": [
+									"pm.test(\"Validate Schema\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    // Check fact",
+									"    pm.expect(jsonData).to.have.property('fact');",
+									"    pm.expect(jsonData.fact).to.be.a(\"string\")",
+									"    // Check length",
+									"    pm.expect(jsonData).to.have.property('length');",
+									"    pm.expect(jsonData.length).to.be.a(\"number\")",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "1262a093-ea18-4807-a5a5-c9169fd98eb7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -25,7 +49,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/fact?max_length=-51287602",
+							"raw": "{{baseUrl}}/fact",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -36,7 +60,8 @@
 								{
 									"description": "maximum length of returned fact",
 									"key": "max_length",
-									"value": "-51287602"
+									"value": "-51287602",
+									"disabled": true
 								}
 							]
 						},
@@ -81,7 +106,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"fact\": \"fugiat officia\",\n  \"length\": 87270139\n}"
+							"body": "{\n  \"fact\": \"fugiat officia\",\n  \"length\": 87270139,\n  \"width\": 94751995\n}"
 						},
 						{
 							"id": "accd26ed-c323-485b-9145-bd18cdbdb890",
@@ -111,6 +136,44 @@
 							"_postman_previewlanguage": "text",
 							"header": [],
 							"cookie": []
+						},
+						{
+							"id": "2541eea3-af09-4b09-b425-02bd7bf69215",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"labore laborum\",\n  \"length\": -26908754,\n  \"width\": 5098524\n}"
 						}
 					]
 				},
@@ -193,7 +256,45 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"fact\": \"sit et mollit\",\n    \"length\": 75473879\n  },\n  {\n    \"fact\": \"ullamco labore qui\",\n    \"length\": 93795264\n  }\n]"
+							"body": "{}"
+						},
+						{
+							"id": "290d75f6-fa5e-44cb-8693-e3c4aa96e9bd",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/facts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"facts"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				}
@@ -205,7 +306,7 @@
 			"name": "Breeds",
 			"item": [
 				{
-					"name": "get Breeds",
+					"name": "Returns a list of breeds",
 					"id": "b0fd5816-0569-43bf-982b-035220767397",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -275,7 +376,45 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"breed\": \"consectetur nisi est\",\n    \"country\": \"nostrud consequat elit\",\n    \"origin\": \"a\",\n    \"coat\": \"velit Excepteur occaecat\",\n    \"pattern\": \"occaecat cillum amet ex veniam\"\n  },\n  {\n    \"breed\": \"do ea deserunt in laborum\",\n    \"country\": \"exercitation est ut commodo\",\n    \"origin\": \"culpa\",\n    \"coat\": \"aliquip id reprehenderit eiusmod proident\",\n    \"pattern\": \"incididunt qui deserunt\"\n  }\n]"
+							"body": "{}"
+						},
+						{
+							"id": "1fcd6909-b8ed-4fd7-b8ff-570be1fa1a87",
+							"name": "Server Exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				}
@@ -288,7 +427,8 @@
 		{
 			"id": "f5ce561b-e72e-408c-a689-02288f28512d",
 			"key": "baseUrl",
-			"value": "https://catfact.ninja"
+			"value": "https://catfact.ninja",
+			"type": "any"
 		}
 	]
 }
