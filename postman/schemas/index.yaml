@@ -61,6 +61,31 @@ paths:
                 type: object
                 items:
                   $ref: '#/components/schemas/Breed'
+  /fact:
+    get:
+      summary: Returns a random fact
+      tags:
+        - Facts
+      description: Returns a random fact
+      operationId: getRandomFact
+      responses:
+        '200':
+          description: Normal response
+          content:
+            application/json:
+              example:
+                fact: "A cat's normal pulse is 140-240 beats per minute, with an average of 195."
+                length: 73
+              schema:
+                $ref: '#/components/schemas/CatFact'
+        '404':
+          description: Fact not found
+        '500':
+          description: Server Exception
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatFact'
   /facts:
     get:
       tags:
