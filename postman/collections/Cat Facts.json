@@ -26,6 +26,7 @@
 									"    // Check length",
 									"    pm.expect(jsonData).to.have.property('length');",
 									"    pm.expect(jsonData.length).to.be.a(\"number\")",
+									"    // test changes",
 									"});",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
