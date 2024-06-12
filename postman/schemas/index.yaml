@@ -2,7 +2,7 @@ openapi: 3.0.0
 x-apiname: catFacts
 x-responsetime: 10000
 info:
-  title: Cat Fact API
+  title: Cat Facts APIs
   contact:
     name: Ronak
     email: admin@admin.com
@@ -11,7 +11,7 @@ info:
     name: commons
     url: https://catfact.ninja
   termsOfService: yes
-  version: 1.0.0
+  version: 2.0.0
   description: |-
     **The Cat Facts API allows you to programmatically access facts about felines over the internet.** 
 
