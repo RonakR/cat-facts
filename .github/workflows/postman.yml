@@ -45,7 +45,7 @@ jobs:
       - name: Postman Version
         run: postman -v
       - name: Login to Postman CLI
-        # run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Run API tests
         run: |
           postman collection run "${{ github.workspace }}/postman/collections/Cat Facts.json" \
