@@ -11,12 +11,14 @@
 			"name": "Facts",
 			"item": [
 				{
-					"name": "Returns a random fact",
+					"name": "get Random Fact",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "161e3026-e6f2-4e0a-b7ce-58fde7652106",
+								"type": "text/javascript",
+								"packages": {},
 								"exec": [
 									"pm.test('Validate Schema', function () {",
 									"  var jsonData = pm.response.json()",
@@ -32,9 +34,7 @@
 									"  pm.response.to.have.status(200)",
 									"})",
 									""
-								],
-								"type": "text/javascript",
-								"packages": {}
+								]
 							}
 						}
 					],
@@ -51,7 +51,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/fact",
+							"raw": "{{baseUrl}}/fact?max_length=14003335",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -62,8 +62,7 @@
 								{
 									"key": "max_length",
 									"value": "14003335",
-									"description": "maximum length of returned fact",
-									"disabled": true
+									"description": "maximum length of returned fact"
 								}
 							]
 						},
@@ -138,44 +137,6 @@
 							"_postman_previewlanguage": "text",
 							"header": [],
 							"cookie": []
-						},
-						{
-							"id": "b94a6552-06ed-49be-8f78-516446db7c35",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/fact",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"fact"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"fact\": \"do consequat\",\n  \"length\": -98123812\n}"
 						}
 					]
 				},
@@ -258,45 +219,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{}"
-						},
-						{
-							"id": "6be7f0b7-abac-4740-a674-9ae5e3471943",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/facts",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"facts"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{}"
+							"body": "[\n  {\n    \"fact\": \"do occaecat veniam\",\n    \"length\": -95055849\n  },\n  {\n    \"fact\": \"qui ame\",\n    \"length\": -93065067\n  }\n]"
 						}
 					]
 				}
@@ -308,7 +231,7 @@
 			"name": "Breeds",
 			"item": [
 				{
-					"name": "Returns a list of breeds",
+					"name": "get Breeds",
 					"id": "b96fa990-249a-41fe-bdf8-05eaf0c3fde5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -378,45 +301,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{}"
-						},
-						{
-							"id": "d9803b24-1762-4d1b-8926-c38859bce091",
-							"name": "Server Exception",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"description": "Added as a part of security scheme: basic",
-										"key": "Authorization",
-										"value": "Basic <credentials>"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/breeds",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"breeds"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{}"
+							"body": "[\n  {\n    \"breed\": \"d\",\n    \"country\": \"ad Ut aliqua consequat\",\n    \"origin\": \"proident voluptate\",\n    \"coat\": \"Lorem incididu\",\n    \"pattern\": \"do amet nisi\"\n  },\n  {\n    \"breed\": \"Ut laboris quis id\",\n    \"country\": \"ut sed\",\n    \"origin\": \"magna anim\",\n    \"coat\": \"officia labore ut\",\n    \"pattern\": \"laboris commodo\"\n  }\n]"
 						}
 					]
 				}
